@@ -1,0 +1,351 @@
+{
+  "dataset": {
+    "name": "Bank Marketing (bank-full.csv)",
+    "source": "UCI Machine Learning Repository",
+    "url": "https://archive.ics.uci.edu/dataset/222/bank+marketing",
+    "doi": "https://doi.org/10.24432/C5K306",
+    "license": "CC BY 4.0",
+    "n_rows": 45211,
+    "n_columns": 17,
+    "n_input_features": 16,
+    "n_positive": 5289,
+    "n_negative": 39922,
+    "positive_rate": 0.11698480458295547,
+    "missing_values": 0,
+    "duplicates": 0,
+    "unknown_pct": {
+      "poutcome": 81.75,
+      "contact": 28.8,
+      "education": 4.11,
+      "job": 0.64
+    },
+    "pdays_never_contacted_pct": 81.74
+  },
+  "preprocessing": {
+    "dropped_columns": [
+      "duration"
+    ],
+    "engineered": [
+      "previously_contacted"
+    ],
+    "n_numeric": 7,
+    "n_categorical": 9,
+    "n_model_features": 16,
+    "n_encoded_features": 51
+  },
+  "split": {
+    "test_size": 0.2,
+    "n_train": 36168,
+    "n_test": 9043,
+    "train_positive_rate": 0.11698186241981863,
+    "test_positive_rate": 0.11699657193409267
+  },
+  "cv": {
+    "Dummy (majority class)": {
+      "pr_auc": {
+        "mean": 0.11698186142744749,
+        "std": 5.256047063156758e-05
+      },
+      "roc_auc": {
+        "mean": 0.5,
+        "std": 0.0
+      },
+      "recall": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "precision": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "f1": {
+        "mean": 0.0,
+        "std": 0.0
+      }
+    },
+    "Logistic regression": {
+      "pr_auc": {
+        "mean": 0.3982869976525883,
+        "std": 0.007474336272124688
+      },
+      "roc_auc": {
+        "mean": 0.7637006924145411,
+        "std": 0.0031835606652180306
+      },
+      "recall": {
+        "mean": 0.6227860254939558,
+        "std": 0.010218729602137216
+      },
+      "precision": {
+        "mean": 0.26643855529581423,
+        "std": 0.003853522952047886
+      },
+      "f1": {
+        "mean": 0.37315465685376814,
+        "std": 0.003216336623581217
+      }
+    },
+    "Random forest": {
+      "pr_auc": {
+        "mean": 0.4411347382011114,
+        "std": 0.0174141713774881
+      },
+      "roc_auc": {
+        "mean": 0.7934805943180672,
+        "std": 0.00369387615050507
+      },
+      "recall": {
+        "mean": 0.5166654106692792,
+        "std": 0.02071967490377589
+      },
+      "precision": {
+        "mean": 0.43433986736379976,
+        "std": 0.002825562392288395
+      },
+      "f1": {
+        "mean": 0.471753906742088,
+        "std": 0.008843779257328124
+      }
+    }
+  },
+  "grid_search": {
+    "best_params": {
+      "max_depth": null,
+      "min_samples_leaf": 5
+    },
+    "n_settings": 4,
+    "n_folds": 5,
+    "n_estimators": 300,
+    "results": [
+      {
+        "max_depth": null,
+        "min_samples_leaf": 5,
+        "mean_train_pr_auc": 0.7220573097234144,
+        "mean_test_pr_auc": 0.4411347382011114,
+        "std_test_pr_auc": 0.0174141713774881,
+        "mean_test_recall": 0.5166654106692792,
+        "mean_test_precision": 0.43433986736379976
+      },
+      {
+        "max_depth": 12,
+        "min_samples_leaf": 5,
+        "mean_train_pr_auc": 0.564886605810437,
+        "mean_test_pr_auc": 0.43649707073602195,
+        "std_test_pr_auc": 0.014933974115844923,
+        "mean_test_recall": 0.5814263106332739,
+        "mean_test_precision": 0.36637718875568465
+      },
+      {
+        "max_depth": null,
+        "min_samples_leaf": 20,
+        "mean_train_pr_auc": 0.5311475182786172,
+        "mean_test_pr_auc": 0.43444990926740673,
+        "std_test_pr_auc": 0.01250988474974189,
+        "mean_test_recall": 0.5842609571816536,
+        "mean_test_precision": 0.3602659380192851
+      },
+      {
+        "max_depth": 12,
+        "min_samples_leaf": 20,
+        "mean_train_pr_auc": 0.49663906721043805,
+        "mean_test_pr_auc": 0.43115265944903386,
+        "std_test_pr_auc": 0.012167247112469746,
+        "mean_test_recall": 0.5967868795721795,
+        "mean_test_precision": 0.33706832309320556
+      }
+    ]
+  },
+  "threshold": {
+    "value": 0.4865178262996766,
+    "oof_f1": 0.47560847118322624,
+    "oof_precision": 0.4290874524714829,
+    "oof_recall": 0.5334436303474356
+  },
+  "test": {
+    "dummy": {
+      "accuracy": 0.8830034280659074,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.5,
+      "pr_auc": 0.11699657193409267,
+      "threshold": 0.5
+    },
+    "logistic_regression": {
+      "accuracy": 0.7552803273250027,
+      "precision": 0.26666666666666666,
+      "recall": 0.6238185255198487,
+      "f1": 0.373620152844608,
+      "roc_auc": 0.7722374063846082,
+      "pr_auc": 0.40941075477911437,
+      "threshold": 0.5
+    },
+    "random_forest_default": {
+      "accuracy": 0.8660842640716576,
+      "precision": 0.4403741231488698,
+      "recall": 0.5340264650283554,
+      "f1": 0.4826997009824861,
+      "roc_auc": 0.8043243889476133,
+      "pr_auc": 0.4538022065444661,
+      "threshold": 0.5
+    },
+    "random_forest_tuned": {
+      "accuracy": 0.862656198164326,
+      "precision": 0.4320531757754801,
+      "recall": 0.552930056710775,
+      "f1": 0.48507462686567165,
+      "roc_auc": 0.8043243889476133,
+      "pr_auc": 0.4538022065444661,
+      "threshold": 0.4865178262996766
+    }
+  },
+  "confusion_matrix": {
+    "random_forest_tuned": {
+      "tn": 7216,
+      "fp": 769,
+      "fn": 473,
+      "tp": 585
+    },
+    "random_forest_default": {
+      "tn": 7267,
+      "fp": 718,
+      "fn": 493,
+      "tp": 565
+    }
+  },
+  "overfitting": {
+    "train_pr_auc": 0.7180812790343334,
+    "cv_pr_auc": 0.4411347382011114,
+    "test_pr_auc": 0.4538022065444661
+  },
+  "permutation_importance": [
+    {
+      "feature": "month",
+      "mean": 0.09028432814444118,
+      "std": 0.005299807232197516
+    },
+    {
+      "feature": "contact",
+      "mean": 0.08133663201489212,
+      "std": 0.007439105155365068
+    },
+    {
+      "feature": "poutcome",
+      "mean": 0.07974665720345869,
+      "std": 0.006237475906466154
+    },
+    {
+      "feature": "housing",
+      "mean": 0.03420930832014,
+      "std": 0.005666924085097107
+    },
+    {
+      "feature": "pdays",
+      "mean": 0.029067223293818095,
+      "std": 0.0051180293281254
+    },
+    {
+      "feature": "day",
+      "mean": 0.021611251348494454,
+      "std": 0.0024778994078318867
+    },
+    {
+      "feature": "balance",
+      "mean": 0.012048910720803802,
+      "std": 0.004303842198482591
+    },
+    {
+      "feature": "campaign",
+      "mean": 0.009571970147397274,
+      "std": 0.0024860882303729273
+    },
+    {
+      "feature": "marital",
+      "mean": 0.008558751130974384,
+      "std": 0.0017222284059777583
+    },
+    {
+      "feature": "previously_contacted",
+      "mean": 0.00722907059810104,
+      "std": 0.0021050844417625724
+    },
+    {
+      "feature": "previous",
+      "mean": 0.006783549367511932,
+      "std": 0.002937201355177696
+    },
+    {
+      "feature": "age",
+      "mean": 0.006508675458147151,
+      "std": 0.0013874340159844476
+    },
+    {
+      "feature": "loan",
+      "mean": 0.006034571576928061,
+      "std": 0.002705872040956689
+    },
+    {
+      "feature": "education",
+      "mean": 0.00357879912838342,
+      "std": 0.0014529375448219368
+    },
+    {
+      "feature": "default",
+      "mean": -0.00028889993026741666,
+      "std": 0.000517905007801168
+    },
+    {
+      "feature": "job",
+      "mean": -0.0016566745894144807,
+      "std": 0.002431555777876231
+    }
+  ],
+  "temporal_check": {
+    "train_rows": 36168,
+    "test_rows": 9043,
+    "train_positive_rate": 0.06726940942269409,
+    "test_positive_rate": 0.31582439455932765,
+    "pr_auc": 0.4703582869839399,
+    "roc_auc": 0.6821815723218332
+  },
+  "subgroup_age": [
+    {
+      "age_band": "18-29",
+      "n": 1003,
+      "actual_yes_rate": 0.17846460618145563,
+      "flagged_rate": 0.2691924227318046,
+      "precision": 0.45925925925925926,
+      "recall": 0.6927374301675978
+    },
+    {
+      "age_band": "30-44",
+      "n": 4823,
+      "actual_yes_rate": 0.10035247771096828,
+      "flagged_rate": 0.11424424631971802,
+      "precision": 0.4047186932849365,
+      "recall": 0.4607438016528926
+    },
+    {
+      "age_band": "45-59",
+      "n": 2880,
+      "actual_yes_rate": 0.09826388888888889,
+      "flagged_rate": 0.10208333333333333,
+      "precision": 0.4557823129251701,
+      "recall": 0.4734982332155477
+    },
+    {
+      "age_band": "60+",
+      "n": 337,
+      "actual_yes_rate": 0.3323442136498516,
+      "flagged_rate": 0.7091988130563798,
+      "precision": 0.4351464435146444,
+      "recall": 0.9285714285714286
+    }
+  ],
+  "environment": {
+    "python": "3.11.0",
+    "sklearn": "1.9.1",
+    "pandas": "3.1.0",
+    "numpy": "2.4.6"
+  }
+}

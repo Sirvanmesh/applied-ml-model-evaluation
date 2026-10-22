@@ -1,0 +1,39 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python / Jupyter caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Secrets and keys
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+*secret*
+*credentials*
+*token*
+
+# Private course notes and APA template files
+Module1_APA_Resources_Capstone.md
+*template*.docx
+*Template*.docx
+*APA*.docx
+*.dotx
+
+# Intermediate report file (the submitted report is module_summary.pdf)
+module_summary.docx
+~$*.docx
+
+# Large files: git cannot ignore by size, so list any file over 100 MB here explicitly.
+# (None exist in this project; bank-full.csv is about 4.6 MB and is intentionally tracked.)
+
+# OS clutter
+.DS_Store
+Thumbs.db
